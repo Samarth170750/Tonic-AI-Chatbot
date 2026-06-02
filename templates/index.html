@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tonic AI</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Code Highlighting Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Ambient glowing backgrounds for premium feel -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    
+    <main class="chat-wrapper">
+        <header class="chat-header">
+            <div class="avatar">
+                <!-- Sparkle/AI icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2a10 10 0 1 0 10 10H12V2zM21.18 8.02c-1-2.3-2.85-4.17-5.16-5.18"/>
+                </svg>
+            </div>
+            <div class="header-info">
+                <h1>Tonic AI</h1>
+                <span class="status"><span class="status-dot"></span> Online</span>
+            </div>
+        </header>
+
+        <section class="chat-messages" id="chat-messages">
+            <div class="message bot-message intro-animation">
+                <div class="message-content">
+                    <p>Hello! I'm Tonic, your AI assistant. I can help you write code, explain concepts clearly, and much more. How can I help you today?</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="chat-input-container">
+            <form id="chat-form">
+                <textarea 
+                    id="user-input" 
+                    placeholder="Type your message here... (Shift+Enter for new line)" 
+                    rows="1" 
+                    autofocus></textarea>
+                <button type="submit" id="send-btn" title="Send message">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </form>
+        </footer>
+    </main>
+
+    <!-- Libraries for Markdown parsing, sanitization, and code highlighting -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
